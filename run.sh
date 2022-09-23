@@ -45,7 +45,7 @@ ns_opts="${ns_opts} -drive file=zns_nsid1.qcow2,if=none,id=zns_nsid1 \
 #128M zone size/cap
 ns_opts="${ns_opts} -drive file=zns_nsid2.qcow2,if=none,id=zns_nsid2 \
           -device nvme-ns,drive=zns_nsid2,bus=nvme-zns-0,nsid=2,zoned=true,zoned.zone_size=128M,zoned.zone_capacity=128M,uuid=5d7f52c9-a08b-4ec4-a97d-469900b3b7cd"
-#128M zone size, 144M zone cap
+#256M zone size, 144M zone cap
 ns_opts="${ns_opts} -drive file=zns_nsid3.qcow2,if=none,id=zns_nsid3 \
           -device nvme-ns,drive=zns_nsid3,bus=nvme-zns-0,nsid=3,zoned=true,zoned.zone_size=256M,zoned.zone_capacity=144M,uuid=908d167c-1eec-497d-9398-97c552be49fb"
 
