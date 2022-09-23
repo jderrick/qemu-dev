@@ -39,15 +39,15 @@ ns_opts="${ns_opts} -drive file=mpath_nsid4.qcow2,if=none,id=mpath_nsid4 -device
 #ZNS
 nvme_subsys_opts="${nvme_subsys_opts} -device nvme-subsys,id=nvme-zns-subsys-0"
 nvme_opts="${nvme_opts} -device nvme,subsys=nvme-zns-subsys-0,serial=coffee34,id=nvme-zns-0"
-#Solidigm/Intel 144M zone size/cap
+#Solidigm/Intel 144M zone cap/size
 ns_opts="${ns_opts} -drive file=zns_nsid1.qcow2,if=none,id=zns_nsid1 \
-          -device nvme-ns,drive=zns_nsid1,bus=nvme-zns-0,nsid=1,zoned=true,zoned.zone_size=144M,zoned.zone_capacity=144M,uuid=cf0f1289-692e-4ec4-bfbd-f3497e2f7647"
-#128M zone size/cap
+          -device nvme-ns,drive=zns_nsid1,bus=nvme-zns-0,nsid=1,zoned=true,zoned.zone_capacity=144M,zoned.zone_size=144M,uuid=cf0f1289-692e-4ec4-bfbd-f3497e2f7647"
+#128M zone cap/size
 ns_opts="${ns_opts} -drive file=zns_nsid2.qcow2,if=none,id=zns_nsid2 \
-          -device nvme-ns,drive=zns_nsid2,bus=nvme-zns-0,nsid=2,zoned=true,zoned.zone_size=128M,zoned.zone_capacity=128M,uuid=5d7f52c9-a08b-4ec4-a97d-469900b3b7cd"
-#256M zone size, 144M zone cap
+          -device nvme-ns,drive=zns_nsid2,bus=nvme-zns-0,nsid=2,zoned=true,zoned.zone_capacity=128M,zoned.zone_size=128M,uuid=5d7f52c9-a08b-4ec4-a97d-469900b3b7cd"
+#144M zone cap/256M zone size
 ns_opts="${ns_opts} -drive file=zns_nsid3.qcow2,if=none,id=zns_nsid3 \
-          -device nvme-ns,drive=zns_nsid3,bus=nvme-zns-0,nsid=3,zoned=true,zoned.zone_size=256M,zoned.zone_capacity=144M,uuid=908d167c-1eec-497d-9398-97c552be49fb"
+          -device nvme-ns,drive=zns_nsid3,bus=nvme-zns-0,nsid=3,zoned=true,zoned.zone_capacity=144M,zoned.zone_size=256M,uuid=908d167c-1eec-497d-9398-97c552be49fb"
 
 
 #Regular
