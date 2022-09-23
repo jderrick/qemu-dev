@@ -27,8 +27,8 @@ slot_opts="${slot_opts} -device x3130-upstream,bus=rp.1,id=up.1 \
 nvme_subsys_opts="${nvme_subsys_opts} -device nvme-subsys,id=nvme-mpath-subsys-0"
 nvme_opts="${nvme_opts} -device nvme,subsys=nvme-mpath-subsys-0,serial=c0def00d,id=nvme0c0"
 nvme_opts="${nvme_opts} -device nvme,subsys=nvme-mpath-subsys-0,serial=c0def00d,id=nvme0c1"
-ns_opts="${ns_opts} -drive file=mpath_nsid1.qcow2,if=none,id=mpath_nsid1 -device nvme-ns,drive=mpath_nsid1,bus=nvme0c0,nsid=11,shared=off"
-ns_opts="${ns_opts} -drive file=mpath_nsid2.qcow2,if=none,id=mpath_nsid2 -device nvme-ns,drive=mpath_nsid2,bus=nvme0c1,nsid=12,shared=off"
+ns_opts="${ns_opts} -drive file=mpath_nsid1.qcow2,if=none,id=mpath_nsid1 -device nvme-ns,drive=mpath_nsid1,bus=nvme0c0,nsid=11,shared=on"
+ns_opts="${ns_opts} -drive file=mpath_nsid2.qcow2,if=none,id=mpath_nsid2 -device nvme-ns,drive=mpath_nsid2,bus=nvme0c1,nsid=12,shared=on"
 
 nvme_subsys_opts="${nvme_subsys_opts} -device nvme-subsys,id=nvme-subsys-1"
 nvme_opts="${nvme_opts} -device nvme,subsys=nvme-subsys-1,serial=coffee12,id=nvme1c0"
